@@ -13,6 +13,8 @@ struct person {
     char* name;
 };
 
+typedef struct person* Person;
+
 struct person* person_new(char*);
 void person_delete(struct person*);
 char* person_getName(struct person*);

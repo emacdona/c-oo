@@ -3,8 +3,8 @@
 #include "object.h"
 
 int main(int argc, char** argv) {
-    struct person* ed   = person_new("Ed MacDonald");
-    struct person* john = person_new("John Doe");
+    Person ed   = person_new("Ed MacDonald");
+    Person john = person_new("John Doe");
 
     printf("Hello %s.\n", ed->vtable->getName(ed));
 
