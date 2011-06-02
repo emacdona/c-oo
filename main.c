@@ -1,31 +1,7 @@
-#include<stdio.h>
-
-struct person;
-
-struct person_ops {
-    char* (*getName) (struct person * );
-};
-
-struct person {
-    char* name;
-    struct person_ops* vtable;
-};
-
-char* person_getName(struct person *);
-
+#include <stdio.h>
+#include "person.h"
 
 int main(int argc, char** argv) {
-    struct person_ops person_vtable;
-    person_vtable.getName = &person_getName;
-
-    struct person ed;
-    ed.name = "Ed";
-    ed.vtable = &person_vtable;
-
-    printf("Hello %s.\n", ed.vtable->getName(&ed));
-}
-
-
-char* person_getName(struct person *person){
-    return person->name;
+    struct person* ed = person_new("Ed MacDonald");
+    printf("Hello %s.\n", ed->vtable->getName(ed));
 }
