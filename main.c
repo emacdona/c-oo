@@ -18,4 +18,5 @@ int main(int argc, char** argv) {
     printf("Hello %s.\n", dispatch(ed, getName));
 
     person_delete(ed);
+    person_delete(john);
 }
