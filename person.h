@@ -13,7 +13,8 @@ struct person {
     char* name;
 };
 
-extern struct person* person_new(char*);
+struct person* person_new(char*);
+void person_delete(struct person*);
 char* person_getName(struct person*);
 void  person_setName(struct person*, char*);
 

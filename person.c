@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "person.h"
 
@@ -23,4 +22,8 @@ char* person_getName(struct person* person) {
 
 void  person_setName(struct person* person, char* name) {
     person->name = name;
+}
+
+void person_delete(struct person* person) {
+    free(person);
 }
